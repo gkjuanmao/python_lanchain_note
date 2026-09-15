@@ -1,0 +1,54 @@
+在 Uvicorn 服务器中遇到 SimpleUI 静态资源 404 的问题很常见，根本原因在于 **Uvicorn 本身不处理静态文件**。
+
+### 💡 为什么会这样？
+Django 自带的 `runserver` 为了开发方便，会自动帮你处理静态文件。但 `uvicorn` 作为生产级的 ASGI 服务器，专注于处理动态请求，**默认不提供静态文件服务**。因此，当 SimpleUI 的 CSS、JS 文件请求发送到 Uvicorn 时，它无法找到这些文件，就返回了 404 错误。
+
+### ✅ 推荐方案：使用 WhiteNoise
+解决这个问题的最佳实践是使用 **WhiteNoise** 中间件。它可以让你的 Django 应用自己高效地提供静态文件服务，非常适合部署在 Uvicorn 这类 ASGI 服务器上。
+
+**操作步骤如下：**
+
+1.  **安装 WhiteNoise**
+```bash
+pip install whitenoise
+```
+
+2.  **配置 `settings.py`**
+找到 `MIDDLEWARE` 配置，将 `WhiteNoiseMiddleware` 添加到 `SecurityMiddleware` 之后。
+```python
+MIDDLEWARE = [
+    'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware', # 添加这一行
+    # ... 其他中间件
+]
+```
+
+3.  **配置静态文件存储 (可选，但推荐)**
+为了获得最佳的缓存和压缩效果，建议使用 WhiteNoise 提供的存储后端。在 `settings.py` 中添加：  
+
+```python
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+```
+
+> 注意：使用此存储后端时，需确保 `DEBUG = False`，否则 Django 会强制使用默认存储。
+
+4.  **收集静态文件**
+这是最关键的一步，它会把包括 SimpleUI 在内的所有静态文件，都收集到 `STATIC_ROOT` 指定的目录中。
+```bash
+python manage.py collectstatic
+```
+如果执行时提示找不到目录，请在 `settings.py` 中明确指定 `STATIC_ROOT`，例如：
+```python
+import os
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+```
+
+5.  **重启 Uvicorn 服务**
+重新启动你的 Uvicorn 服务，静态资源应该就能正常加载了。
+
+### 🛠️ 其他备选方案
+*   **使用 Nginx**：这是最经典的生产环境部署方式。让 Nginx 作为反向代理，负责处理所有 `/static/` 和 `/media/` 的请求，并将动态请求转发给 Uvicorn。
+*   **使用 Daphne**：Daphne 是 Django 官方推荐的 ASGI 服务器，它对 Django 生态的支持更友好，配置静态文件可能更简单。
+
+### 💎 总结
+核心解决方案就是 **WhiteNoise**。它能很好地解决 Uvicorn 不处理静态文件的问题，让 SimpleUI 及其他静态资源正常加载。
