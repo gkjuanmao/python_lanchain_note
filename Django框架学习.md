@@ -404,7 +404,7 @@ def del_session(request):
 ---
 
 # Argon2id
-密码加密 [[Argon2]]
+密码加密 [Argon2](Argon2.md)
 
 # 路由进阶
 
@@ -532,18 +532,18 @@ class UserConfig(AppConfig):
 # 使用uvicorn提供ASGI服务
 
 使用uvicorn目的是取代django调试时自己的web服务器，每次启动或者检测到代码改动后重启就巨慢
-配置过程见：[[uvicorn]]
+配置过程见：[uvicorn](uvicorn.md)
 # 使用simplui
 
 官网文档：[快速上手指南 | Django SimpleUI](https://newpanjing.github.io/simpleui_docs/config.html)
 
 学习项目由于使用了uvicorn服务器提供web服务，导致启动时无法提供静态资源，需要安装whitenoise模块实现服务器提供静态文件服务
 
-详细配置过程见：[[Simpleui]]
+详细配置过程见：[Simpleui](Simpleui.md)
 
 # Django框架流程
 
-![[Pasted image 20260915195953.png]]
+![Pasted image 20260915195953.png](./images/20260915195953.png)
 
 # Django模板引擎
 ## render()函数
@@ -557,3 +557,4 @@ class UserConfig(AppConfig):
 DTL模板文件是一种带有特殊语法的HTML文件，这个HTML文件可以被Django编译，可以从视图中传递参数进去，实现数据动态化。  
 在编译完成后，生成一个普通的HTML文件，然后发送给客户端。
 
+---
