@@ -6,8 +6,9 @@ set -u
 REPO_ROOT=$(git rev-parse --show-toplevel 2>/dev/null) || exit 0
 cd "$REPO_ROOT" || exit 0
 
-# 可用 ZCODE_SKILLS_HOME 覆盖目标根目录
-SKILLS_HOME="${ZCODE_SKILLS_HOME:-${HOME:-/c/Users/Administrator}/.zcode/skills}"
+# 默认同时同步到 ZCode 与 Trae 的用户级 skills 目录，可用 ZCODE_SKILLS_HOME 覆盖（多个用空格分隔）
+USER_HOME="${HOME:-/c/Users/Administrator}"
+SKILLS_HOMES="${ZCODE_SKILLS_HOME:-$USER_HOME/.zcode/skills $USER_HOME/.trae/skills}"
 
 # 按 git 跟踪记录查找，所以 SKILL.md 挪到哪一层都能找到
 MATCHES=$(git ls-files | grep -E '(^|/)SKILL\.md$' || true)
@@ -32,18 +33,20 @@ echo "$MATCHES" | while IFS= read -r SRC; do
         SKILL_NAME=$(basename "$DIR")
     fi
 
-    DEST_DIR="$SKILLS_HOME/$SKILL_NAME"
-    DEST="$DEST_DIR/SKILL.md"
+    for SKILLS_HOME in $SKILLS_HOMES; do
+        DEST_DIR="$SKILLS_HOME/$SKILL_NAME"
+        DEST="$DEST_DIR/SKILL.md"
 
-    # 内容一致就不动了，避免每次提交都重写文件
-    if [ -f "$DEST" ] && cmp -s "$SRC" "$DEST"; then
-        continue
-    fi
+        # 内容一致就不动了，避免每次提交都重写文件
+        if [ -f "$DEST" ] && cmp -s "$SRC" "$DEST"; then
+            continue
+        fi
 
-    mkdir -p "$DEST_DIR" || continue
-    cp "$SRC" "$DEST" || continue
+        mkdir -p "$DEST_DIR" || continue
+        cp "$SRC" "$DEST" || continue
 
-    echo "→ 已同步 skill: $DEST"
+        echo "→ 已同步 skill: $DEST"
+    done
 done
 
 exit 0

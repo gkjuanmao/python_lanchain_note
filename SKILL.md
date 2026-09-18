@@ -85,4 +85,4 @@ description: 整理 Obsidian 笔记，遵循 PARA 分类法
 
 ## 六、运行环境
 
-16. 本 skill 文件由仓库根目录的 `SKILL.md` 管理。提交到 git 后，`.githooks/` 下的 hook 会自动同步到 `~/.zcode/skills/obsidian-organizer/SKILL.md`，请勿直接修改用户级副本。
+16. 本 skill 文件由仓库根目录的 `SKILL.md` 管理。提交到 git 后，`.githooks/` 下的 hook 会自动同步到 `~/.zcode/skills/obsidian-organizer/SKILL.md` 和 `~/.trae/skills/obsidian-organizer/SKILL.md`，请勿直接修改用户级副本。
