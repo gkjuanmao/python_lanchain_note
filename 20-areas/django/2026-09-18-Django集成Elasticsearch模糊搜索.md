@@ -173,3 +173,10 @@ class ArticleSearchViewSet(DocumentViewSet):
 *   **`modelsearch`**: 一个相对较新的库，它的目标是让你**继续使用 Django ORM 来查询**，但底层实际是在 Elasticsearch 上执行。这大大降低了学习成本，对于熟悉 ORM 的开发者非常友好。
 
 **总结一下**，对于大多数需要高性能搜索的 Django 项目，`django-elasticsearch-dsl` 是目前最直接、最灵活的选择。它保留了 ES 强大的查询能力，同时通过 `Document` 类的设计提供了良好的 Django 集成体验。如果你希望尽可能减少代码改动，`modelsearch` 也是一个值得探索的方案。
+
+## 参考信息
+
+- [[2026-09-18-Django-ORM模糊查询]] — ORM `icontains` 的性能瓶颈正是引入 ES 的起因
+- [[2026-09-18-Django-ORM查询数据]] — ES 查询语法与 ORM 查询写法的对照
+- [[2026-09-18-Django模型与数据库配置]] — SearchDocument 与 Django 模型类的对应关系
+- [[2026-09-18-Django入门配置与部署]] — `INSTALLED_APPS` 与 settings 配置方式

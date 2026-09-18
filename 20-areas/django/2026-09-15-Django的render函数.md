@@ -228,3 +228,11 @@ def index(request):
 - 支持状态码、Content-Type、指定模板引擎、模板列表回退。
 
 写 HTML 视图时，**优先使用 `render()`**；需要延迟渲染或中间件介入时，再用 `TemplateResponse`；返回 JSON 用 `JsonResponse`；返回纯文本用 `HttpResponse`。记住：**只要渲染模板，就传 `request`。**
+
+## 参考信息
+
+- [[2026-09-18-Django请求与响应对象]] — `render()` 返回的 `TemplateResponse` 属于响应对象家族，此处有完整对照
+- [[2026-09-18-Django模板引擎与静态文件]] — 模板加载与静态文件配置是 `render()` 能工作的前提
+- [[2026-09-16-DTL模板语法速查]] — `render()` 渲染的正是 DTL 模板，模板中可用哪些标签由此决定
+- [[2026-09-18-Django中间件与CSRF安全]] — 必须传 `request` 才能让 CSRF 与认证信息注入上下文
+- [[2026-09-18-Django自定义中间件详解]] — `process_template_response` 可介入 `render()` 返回对象的渲染过程

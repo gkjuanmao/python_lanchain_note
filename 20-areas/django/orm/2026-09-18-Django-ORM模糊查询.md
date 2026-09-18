@@ -435,8 +435,10 @@ from django.db.models import Q
 - 超大文本 → PostgreSQL 全文检索
 - 百万级数据 → 外部搜索引擎
 
+## 参考信息
 
-
----
-
-**相关笔记**：[[2026-09-18-Django-ORM查询数据]]、[[2026-09-18-Django集成Elasticsearch模糊搜索]]
+- [[2026-09-18-Django-ORM查询数据]] — 基础查询方法，建议先读
+- [[2026-09-18-Django集成Elasticsearch模糊搜索]] — 数据量继续增长后的搜索方案
+- [[2026-09-18-Django-ORM更新数据]] — `F` 表达式的另一处典型用法
+- [[2026-09-10-Python基础知识]] — `regex` / `iregex` 依赖的正则基础
+- [[2026-09-15-SQLite命令行速查表]] — 可用命令行直接验证 LIKE 与索引行为

@@ -161,3 +161,10 @@ PASSWORD_HASHERS = [
 5. **调优**：通过子类化调整 `time_cost`、`memory_cost`、`parallelism` 以适应服务器
 
 Argon2id 是当前密码哈希的黄金标准，在 Django 中启用它只需几行配置，却能带来实质性的安全提升。
+
+## 参考信息
+
+- [[2026-09-18-Django会话控制与密码安全]] — 认证流程中实际调用密码哈希的场景
+- [[2026-09-18-Django-ORM新增数据]] — `create_user` 本质仍是一次 ORM 写入
+- [[2026-09-18-Django入门配置与部署]] — `PASSWORD_HASHERS` 所在的 `settings.py` 整体结构
+- [[2026-09-10-Python基础知识]] — `parallelism` 参数的线程模型背景

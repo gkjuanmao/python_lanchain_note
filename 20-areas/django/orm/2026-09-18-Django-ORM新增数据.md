@@ -313,9 +313,10 @@ class StudentCreateView(View):
 - 需要保存前处理逻辑用"实例化 + `save()`"。
 - 批量插入用 `bulk_create()`，但记住它不触发信号、不调用 `save()`。
 
+## 参考信息
 
-
-
----
-
-**相关笔记**：[[2026-09-18-Django模型与数据库配置]]、[[2026-09-18-Django-ORM查询数据]]
+- [[2026-09-18-Django模型与数据库配置]] — 写入目标模型的字段定义
+- [[2026-09-18-Django-ORM查询数据]] — 写入之后如何取回验证
+- [[2026-09-18-Django-ORM更新数据]] — `bulk_create` 与 `bulk_update` 的批量思路一致
+- [[2026-09-18-Django-ORM删除数据]] — 同样需要 `atomic` 事务包裹的写入场景
+- [[2026-09-15-Django配置Argon2id密码哈希]] — `create_user` 内部的密码哈希过程

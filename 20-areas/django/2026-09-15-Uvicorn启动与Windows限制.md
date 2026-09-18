@@ -13,3 +13,9 @@ uvicorn 的 --workers N 通过 multiprocessing 生成子进程，并把同一个
 
 + 你也看到了它"部分能跑"：日志里 worker 28276 成功监听并返回 200，而 SpawnProcess-2 / 10456 崩溃——正是多 worker 竞争同一 socket 的竞态表现。
 + uvicorn 官方文档也明确：--workers 多进程模式在 Windows 上不受支持。 ASGI 'lifespan' protocol appears unsupported 是无害提示（Django 默认不实现 lifespan 协议），可忽略。
+
+## 参考信息
+
+- [[2026-09-18-Django入门配置与部署]] — uvicorn 启动命令出现在入门篇的部署小节
+- [[2026-09-15-SimpleUI静态资源404]] — 换用 Uvicorn 之后静态资源失效的完整解决方案
+- [[2026-09-15-Django的render函数]] — 异步视图下调用同步 `render()` 的限制与此同源
