@@ -3,6 +3,8 @@ tags: [python, django, orm, 新增数据]
 description: ORM 写入数据的三种主流方法（create/save/bulk_create）、get_or_create 与 update_or_create，及五种方法对比与选型。
 ---
 
+# Django-ORM新增数据
+
 ## Django ORM 里添加数据的三种主流方法
 
 在 Django 视图里往数据库插入数据，最常见的是这三种：

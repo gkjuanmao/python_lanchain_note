@@ -3,6 +3,8 @@ tags: [python, django, 视图, 模板渲染]
 description: Django render() 快捷函数的签名、参数、返回值与内部工作流程详解。
 ---
 
+# Django的render函数
+
 `render()` 是 Django 中最常用的快捷函数，用于**加载模板、填充上下文、渲染成 HTML，并返回一个 `HttpResponse`**。它把“模板加载 → 上下文处理 → 渲染 → 包装响应”这一套流程封装成一行代码，是编写 HTML 视图的标准方式。
 
 ---

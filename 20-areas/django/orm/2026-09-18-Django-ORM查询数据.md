@@ -3,6 +3,8 @@ tags: [python, django, orm, 查询数据]
 description: all/filter/exclude/get 四种基本查询方法详解、对比与衍生常用方法。
 ---
 
+# Django-ORM查询数据
+
 ## Django ORM 查询数据的四种基本方法
 
 Django ORM 里最核心、最基础的查询方法有四个：

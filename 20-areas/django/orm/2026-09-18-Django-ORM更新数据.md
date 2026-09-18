@@ -3,6 +3,8 @@ tags: [python, django, orm, 更新数据]
 description: save() 与 update() 的核心区别、auto_now 陷阱、full_clean 缺失、并发问题，以及 bulk_update 批量更新。
 ---
 
+# Django-ORM更新数据
+
 ## Django ORM 数据更新：`save()` vs `update()`
 
 Django 更新数据主要有两种方式：**实例的 `save()`** 和 **QuerySet 的 `update()`**。它们看起来都能改数据，但机制、性能、行为差别很大。

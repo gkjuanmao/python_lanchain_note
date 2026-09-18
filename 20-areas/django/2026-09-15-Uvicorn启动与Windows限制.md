@@ -3,6 +3,8 @@ tags: [python, django, uvicorn, asgi, 部署]
 description: Uvicorn 启动 Django ASGI 应用的方式，以及 Windows 下不支持 --workers 的原因。
 ---
 
+# Uvicorn启动与Windows限制
+
 启动示例（ASGI，Django 6 自带 ASGI_APPLICATION）：
 `uv add uvicorn`
 `uv run uvicorn config.asgi:application --host 0.0.0.0 --port 8000`

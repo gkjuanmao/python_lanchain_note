@@ -3,6 +3,8 @@ tags: [python, django, orm, 删除数据]
 description: 实例与 QuerySet 的 delete()、视图中的删除写法、级联删除 on_delete 七种取值、软删除方案与事务包裹。
 ---
 
+# Django-ORM删除数据
+
 ## Django ORM删除数据的完整方法汇总
 
 Django 里删除数据，主要分**硬删除**和**软删除**两大类。硬删除又分实例删除、QuerySet 批量删除；软删除靠自定义字段实现。

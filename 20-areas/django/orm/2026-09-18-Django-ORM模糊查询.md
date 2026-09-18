@@ -3,6 +3,8 @@ tags: [python, django, orm, 模糊查询, 性能优化]
 description: contains/startswith/endswith/regex/in/range/isnull 等查询方法、跨表关联查询、Q 与 F 表达式、性能对比与优化。
 ---
 
+# Django-ORM模糊查询
+
 ## Django ORM 模糊查询的一些方法
 
 Django 的模糊查询通过**字段查找（field lookup）**实现，写在 `filter()` / `exclude()` / `get()` 里，用双下划线 `__` 连接字段名和查找类型。

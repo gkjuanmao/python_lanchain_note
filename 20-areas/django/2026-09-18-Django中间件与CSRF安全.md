@@ -3,7 +3,9 @@ tags: [python, django, 中间件, csrf, 安全]
 description: 内置中间件清单、CSRF 攻击的原理与防御、GZIP 压缩、中间件的执行顺序。
 ---
 
-# 中间件
+# Django中间件与CSRF安全
+
+## 中间件
 
 Middleware，是 **Django 请求/响应**处理的钩子框架。它是一个轻量级的、低级的“插件”系统，用于全局改变 Django 的输入或输出。【输入指代的就是客户端向服务端django发送数据，输出指代django根据客户端要求处理数据的结果返回给客户端】
 
@@ -13,7 +15,7 @@ Middleware，是 **Django 请求/响应**处理的钩子框架。它是一个轻
 
 文档: [https://docs.djangoproject.com/zh-hans/3.2/topics/http/middleware/](https://docs.djangoproject.com/zh-hans/3.2/topics/http/middleware/)
 
-## 内置中间件
+### 内置中间件
 
 ```python
 MIDDLEWARE = [  
@@ -28,9 +30,9 @@ MIDDLEWARE = [
 ]
 ```
 
-## CSRF攻击
+### CSRF攻击
 
-### 一句话解释
+#### 一句话解释
 
 **CSRF（Cross-Site Request Forgery，跨站请求伪造）** 是一种攻击方式：攻击者诱导**已经登录目标网站的你**，在不知情的情况下，用你的身份向目标网站发送一个恶意请求。
 
@@ -39,7 +41,7 @@ MIDDLEWARE = [
 ---
 ---
 
-### 攻击原理
+#### 攻击原理
 
 CSRF 能成功，依赖三个条件同时成立：
 
@@ -52,7 +54,7 @@ CSRF 能成功，依赖三个条件同时成立：
 
 攻击者不需要知道你的密码，也不需要偷你的 Cookie，**只需要让你在登录状态下访问一个恶意页面**。
 
-### 一个具体场景
+#### 一个具体场景
 
 假设你登录了银行网站 `bank.com`，浏览器里存着有效的 `sessionid`。
 
@@ -90,9 +92,9 @@ Body: to=attacker&amount=10000
 
 **攻击者全程没有拿到你的密码，也没有读到你的 Cookie，只是"借"了你的登录状态。**
 
-### 如何防御
+#### 如何防御
 
-#### 1. CSRF Token（最核心）
+##### 1. CSRF Token（最核心）
 
 服务器在页面里嵌入一个随机 token，提交表单时必须带上。攻击者无法预测这个 token，所以伪造的请求会被拒绝。
 
@@ -115,7 +117,7 @@ Django 的 `CsrfViewMiddleware` 会校验这个 token 是否和 Cookie 中的 `c
 
 **关键点**：攻击者的 `evil.com` 无法读取 `bank.com` 页面里的 token（同源策略），所以无法伪造。
 
-#### 2. SameSite Cookie
+##### 2. SameSite Cookie
 
 给 Cookie 设置 `SameSite` 属性，限制跨站请求携带 Cookie：
 
@@ -134,23 +136,23 @@ CSRF_COOKIE_SAMESITE = 'Lax'
 
 `Lax` 已经能挡住绝大多数 CSRF 攻击，是现代浏览器的默认值。
 
-#### 3. 检查 Referer / Origin
+##### 3. 检查 Referer / Origin
 
 服务器检查请求头里的 `Referer` 或 `Origin` 是否来自自己的域名。Django 的 `CsrfViewMiddleware` 也会做这个校验。
 
-#### 4. 关键操作二次验证
+##### 4. 关键操作二次验证
 
 转账、改密码等敏感操作，要求重新输入密码、短信验证码、OTP 等。即使 CSRF 成功，攻击者也过不了这一关。
 
-#### 5. 不要用 GET 做写操作
+##### 5. 不要用 GET 做写操作
 
 GET 请求应该只读。如果用 `GET /delete?id=1` 删除数据，一个 `<img src="...">` 就能触发 CSRF。
 
-## GZIP
+### GZIP
 
 建议在nginx中配置
 
-## 中间件的执行顺序
+### 中间件的执行顺序
 
 ![20260916150035.png](images/20260916150035.png)
 
