@@ -1,3 +1,8 @@
+---
+tags: [python, django, elasticsearch, 全文搜索]
+description: 使用 django-elasticsearch-dsl 为 Django 模型建立 ES 索引并实现模糊搜索的完整集成示例。
+---
+
 当 Django ORM 的 `icontains` 查询随着数据量增长而变慢时，Elasticsearch (ES) 是一个专业的解决方案。在 Django 中集成 ES，最主流和高效的方式是使用 **`django-elasticsearch-dsl`** 这个库，它能让你用类似 Django ORM 的语法来定义索引和执行搜索。
 
 下面是一个完整的集成示例。

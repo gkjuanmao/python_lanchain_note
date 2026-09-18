@@ -1,3 +1,8 @@
+---
+tags: [python, django, 安全, 密码哈希]
+description: 在 Django 中配置和使用 Argon2id 密码哈希的完整流程，含参数调优与已有密码的自动迁移。
+---
+
 在 Django 中使用 Argon2id 进行密码存储，是当前提升应用安全性的最佳实践之一。Argon2id 是密码哈希竞赛的获胜者，它不仅抗 GPU 破解，还通过内存硬特性有效抵御定制硬件的攻击。
 
 下面是在 Django 中从零开始配置和使用 Argon2id 的完整指南。
