@@ -1,0 +1,3 @@
+#!/bin/sh
+# git pull / merge 后同步 skill
+exec "$(git rev-parse --show-toplevel)/.githooks/sync-skill.sh" "$@"

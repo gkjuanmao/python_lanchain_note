@@ -1,0 +1,3 @@
+#!/bin/sh
+# 提交后同步 skill（注意：--amend 也会触发这里）
+exec "$(git rev-parse --show-toplevel)/.githooks/sync-skill.sh" "$@"
