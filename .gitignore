@@ -1,0 +1,6 @@
+# Obsidian 第三方插件与主题：体积大（plugins 约 22MB），且可从社区商店重装，不入库
+.obsidian/plugins/
+.obsidian/themes/
+
+# Obsidian 本地窗口布局，几乎每次打开都会变动，不入库
+.obsidian/workspace.json
