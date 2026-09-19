@@ -207,6 +207,8 @@ Article.objects.filter(tags__name__icontains="python").distinct()
 
 `filter()` 里的多个参数是 **AND**，要做 **OR** 或更复杂组合，用 `Q`。
 
+> 相关：[[2026-09-19-Django-ORM的F对象与Q对象]]
+
 ```python
 from django.db.models import Q
 
@@ -444,3 +446,6 @@ from django.db.models import Q
 - [[2026-09-18-Django-ORM更新数据]] — `F` 表达式的另一处典型用法
 - [[2026-09-10-Python基础知识]] — `regex` / `iregex` 依赖的正则基础
 - [[2026-09-15-SQLite命令行速查表]] — 可用命令行直接验证 LIKE 与索引行为
+- [[2026-09-19-Django-ORM的F对象与Q对象]] — 本篇第十节 Q 对象、第十一节 F 表达式的完整版
+- [[2026-09-19-Django关联模型与范式]] — 跨表查询依赖关系字段
+- [[2026-09-19-Django查询优化]] — 跨多对多查询的预加载与去重

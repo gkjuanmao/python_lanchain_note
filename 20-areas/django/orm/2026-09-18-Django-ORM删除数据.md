@@ -149,6 +149,8 @@ class StudentDetailView(View):
 
 删除一条记录时，关联的外键怎么办？由 `on_delete` 决定。
 
+> 相关：[[2026-09-19-Django关联模型与范式]]
+
 ```python
 class Enrollment(models.Model):
     student = models.ForeignKey(
@@ -546,3 +548,5 @@ Student.objects.all().delete()   # 1000 条，信号触发 1000 次
 - [[2026-09-18-Django模型与数据库配置]] — `on_delete` 是模型字段的约束选项
 - [[2026-09-18-Django设计模式与视图基础]] — 类视图中执行删除的写法
 - [[2026-09-18-Django中间件与CSRF安全]] — 删除类表单必须带 CSRF 防护
+- [[2026-09-19-Django-ORM聚合与分组]] — 删除影响的行数与统计核对
+- [[2026-09-19-Django关联模型与范式]] — on_delete 七种取值与级联删除的关系

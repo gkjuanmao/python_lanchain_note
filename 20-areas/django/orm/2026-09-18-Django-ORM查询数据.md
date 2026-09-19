@@ -306,3 +306,7 @@ class StudentQueryView(View):
 - [[2026-09-18-Django-ORM更新数据]] — 查询结果上做更新的常见组合
 - [[2026-09-18-Django-ORM模糊查询]] — 四种基本方法之上的进阶查询
 - [[2026-09-18-Django集成Elasticsearch模糊搜索]] — `icontains` 遇到性能瓶颈后的替代方案
+- [[2026-09-19-Django-ORM的F对象与Q对象]] — filter/exclude 的进阶：Q 组合与 F 字段引用
+- [[2026-09-19-Django-ORM惰性执行与缓存]] — 本篇提到的惰性求值展开
+- [[2026-09-19-Django关联模型与范式]] — filter 跨表查询的基础
+- [[2026-09-19-Django查询优化]] — exists/count/values 等替代写法

@@ -192,6 +192,8 @@ with transaction.atomic():
 
 用数据库层面的原子运算，不用先读再写：
 
+> 相关：[[2026-09-19-Django-ORM的F对象与Q对象]]
+
 ```python
 from django.db.models import F
 
@@ -432,3 +434,5 @@ result = Student.objects.filter(...).update(...)
 - [[2026-09-18-Django-ORM新增数据]] — `bulk_update` 对应 `bulk_create`
 - [[2026-09-18-Django-ORM删除数据]] — 同为批量写入，同样涉及事务与并发
 - [[2026-09-18-Django-ORM模糊查询]] — `F` 表达式在两篇中都有使用场景
+- [[2026-09-19-Django-ORM的F对象与Q对象]] — F() 表达式的完整用法与限制
+- [[2026-09-19-Django查询优化]] — update 与 bulk_update 的批量写法
