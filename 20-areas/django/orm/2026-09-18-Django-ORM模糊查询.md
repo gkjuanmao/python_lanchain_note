@@ -7,7 +7,7 @@ description: contains/startswith/endswith/regex/in/range/isnull 等查询方法�
 
 ## Django ORM 模糊查询的一些方法
 
-Django 的模糊查询通过**字段查找（field lookup）**实现，写在 `filter()` / `exclude()` / `get()` 里，用双下划线 `__` 连接字段名和查找类型。
+Django 的模糊查询通过**字段查找（field lookup）实现，写在 `filter()` / `exclude()` / `get()` 里，用双下划线 `__` 连接字段名和查找类型。
 
 ---
 
