@@ -1,14 +1,16 @@
 #!/bin/sh
-# 把仓库里的 SKILL.md 同步到用户级 skills 目录，供 ZCode 加载。
-# 仓库副本是唯一的版本源；用户级目录里只是副本，不要直接改那边。
+# 把仓库里的 SKILL.md 同步到各 agent 的 skills 目录（ZCode、Trae、DSH）。
+# 仓库副本是唯一的版本源；目标目录里只是副本，不要直接改那边。
 set -u
 
 REPO_ROOT=$(git rev-parse --show-toplevel 2>/dev/null) || exit 0
 cd "$REPO_ROOT" || exit 0
 
-# 默认同时同步到 ZCode 与 Trae 的用户级 skills 目录，可用 ZCODE_SKILLS_HOME 覆盖（多个用空格分隔）
+# 默认同步到 ZCode、Trae 的用户级 skills 目录，以及 DSH 的项目级 skills 目录：
+# DSH 只扫描 <项目根>/.dsh/skills/<name>/SKILL.md 或 <name>.md，仓库根那份它读不到。
+# 可用 ZCODE_SKILLS_HOME 覆盖（多个用空格分隔）
 USER_HOME="${HOME:-/c/Users/Administrator}"
-SKILLS_HOMES="${ZCODE_SKILLS_HOME:-$USER_HOME/.zcode/skills $USER_HOME/.trae/skills}"
+SKILLS_HOMES="${ZCODE_SKILLS_HOME:-$USER_HOME/.zcode/skills $USER_HOME/.trae/skills $REPO_ROOT/.dsh/skills}"
 
 # 按 git 跟踪记录查找，所以 SKILL.md 挪到哪一层都能找到
 MATCHES=$(git ls-files | grep -E '(^|/)SKILL\.md$' || true)
