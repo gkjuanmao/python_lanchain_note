@@ -15,6 +15,7 @@ description: 整理 Obsidian 笔记，遵循 PARA 分类法
    - 复习与自测材料（面试题、题库）放在 `40-reviews/`，按 `YYYY-MM-DD-<主题>面试题.md` 命名，不复述领域知识本身。
    - 题库配套的答案与解析放在 `40-reviews/.answers/`（点目录，Obsidian 默认不显示），错题统一累积在 `40-reviews/错题集.md`。
    - 出题由 `interview-question-writer` skill 负责；本 skill 只维护题库的结构与链接卫生，不改写题目内容。
+   - 题库文件的三条例外：题目卷不加 `## 参考信息`（避免泄露取材范围）、H1 允许带“第 N 轮”等说明性后缀；`错题集.md` 是累积索引，不套 `YYYY-MM-DD-` 命名前缀；答案文件与错题集仍需 `## 参考信息`。
 
 2. **子目录规则**
    - `20-areas/` 下按技术主题建子目录，用小写英文命名，如 `python/`、`django/`、`database/`。
