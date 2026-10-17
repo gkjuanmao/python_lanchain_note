@@ -178,5 +178,5 @@ class ArticleSearchViewSet(DocumentViewSet):
 
 ## 参考信息
 
-- [[2026-09-18-Django知识地图]] — 学习路径中的位置：知识地图「六、部署与生态」
+- [[2026-10-17-Django基础知识地图]] — 学习路径中的位置：知识地图「五、部署与生态」
 - [[2026-09-18-Django-ORM模糊查询]] — 起因与对照：ORM 的 icontains 性能瓶颈正是引入 ES 的原因

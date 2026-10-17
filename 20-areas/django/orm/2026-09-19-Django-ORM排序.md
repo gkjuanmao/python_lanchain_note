@@ -491,4 +491,4 @@ from django.db.models import F, Case, When, Value, IntegerField
 
 ## 参考信息
 
-- [[2026-09-18-Django知识地图]] — 学习路径中的位置：知识地图「五、数据库与 ORM」
+- [[2026-10-17-Django-ORM知识地图]] — 学习路径中的位置：知识地图「四、结果处理」
