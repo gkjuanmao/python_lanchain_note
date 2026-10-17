@@ -768,8 +768,4 @@ return await arender(request, 'index.html', context)
 
 ## 参考信息
 
-- [[2026-09-18-Django请求与响应对象]] — `render()` 返回的 `TemplateResponse` 属于响应对象家族，此处有完整对照
-- [[2026-09-18-Django模板引擎与静态文件]] — 模板加载与静态文件配置是 `render()` 能工作的前提
-- [[2026-09-16-DTL模板语法速查]] — `render()` 渲染的正是 DTL 模板，模板中可用哪些标签由此决定
-- [[2026-09-18-Django中间件与CSRF安全]] — 必须传 `request` 才能让 CSRF 与认证信息注入上下文
-- [[2026-09-18-Django自定义中间件详解]] — `process_template_response` 可介入 `render()` 返回对象的渲染过程
+- [[2026-09-18-Django知识地图]] — 学习路径中的位置：知识地图「三、模板与静态文件」

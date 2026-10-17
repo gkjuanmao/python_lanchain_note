@@ -104,4 +104,4 @@ for index, fruit in enumerate(fruits):
 
 ## 参考信息
 
-- [[2026-09-10-Python基础知识]] — 前置基础：enumerate 是 Python 内置函数，属于循环遍历的基础知识。
+- [[2026-10-17-Python知识地图]] — 学习路径中的位置：知识地图「第三步：常用工具」

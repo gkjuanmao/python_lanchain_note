@@ -121,6 +121,5 @@ if __name__ == "__main__":
 
 ## 参考信息
 
-- [[2026-10-12-LangChain调用大模型API]] — 上游基础：本篇的对话历史管理是该篇多轮对话（短期记忆）内容的完整可运行实现，模型初始化与 stream/invoke 用法详见该篇。
-- [[2026-10-11-提示词工程#模型参数与消息角色]] — 概念对应：system/user/assistant 消息角色在 LangChain 中即 SystemMessage/HumanMessage/AIMessage。
-- [[2026-10-11-LangChain框架]] — 框架概览：本篇属于 LangChain 核心模块中消息交互部分的展开。
+- [[2026-10-11-AI知识地图]] — 学习路径中的位置：知识地图「第五步：应用开发」
+- [[2026-10-12-LangChain调用大模型API]] — 上游基础：模型初始化与 invoke/stream 用法在该篇

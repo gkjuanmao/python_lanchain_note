@@ -119,7 +119,6 @@ Student.objects.order_by(-F("age"))
 Student.objects.order_by(F("age").desc())
 ```
 
-> 相关：[[2026-09-19-Django-ORM的F对象与Q对象]]
 
 ---
 
@@ -198,7 +197,6 @@ GROUP BY author.id
 ORDER BY article_count DESC;
 ```
 
-> 相关：[[2026-09-19-Django-ORM聚合与分组]]
 
 ---
 
@@ -296,7 +294,6 @@ Student.objects.order_by()        # 清除默认排序
 - 复杂项目**不设默认排序**，在视图里显式 `order_by`
 - 分页时必须显式排序
 
-> 相关：[[2026-09-18-Django模型与数据库配置]]
 
 ---
 
@@ -494,8 +491,4 @@ from django.db.models import F, Case, When, Value, IntegerField
 
 ## 参考信息
 
-- [[2026-09-19-Django-ORM的F对象与Q对象]] — 表达式排序依赖 F() 引用字段
-- [[2026-09-19-Django-ORM聚合与分组]] — 聚合结果排序与 GROUP BY 的配合
-- [[2026-09-18-Django模型与数据库配置]] — 模型字段与 Meta 定义，默认排序在此设置
-- [[2026-09-18-Django-ORM查询数据]] — 排序作用于 filter/exclude 之后的 QuerySet
-- [[2026-09-19-Django查询优化]] — 排序列索引与联合索引顺序
+- [[2026-09-18-Django知识地图]] — 学习路径中的位置：知识地图「五、数据库与 ORM」

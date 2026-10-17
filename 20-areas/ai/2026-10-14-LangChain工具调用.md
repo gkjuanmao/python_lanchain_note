@@ -401,7 +401,5 @@ output
 
 ## 参考信息
 
-- [[2026-10-11-Agent开发与架构]] — 下游应用：工具调用是 Agent 五大核心要素中"工具使用（Tool Use）"的基础机制，LangGraph/Deep Agent 在其上构建更复杂编排。
-- [[2026-10-14-LangChain消息与对话历史]] — 配套机制：AI 返回的 tool_calls 与工具执行结果都需追加进消息列表再回传模型。
-- [[2026-10-11-LangChain框架]] — 框架概览：本篇属于 langchain-core 中 tools 模块的展开。
-- [[2026-10-12-LangChain调用大模型API]] — 上游：bind_tools 绑定的 model 由 init_chat_model 配置得到。
+- [[2026-10-11-AI知识地图]] — 学习路径中的位置：知识地图「第五步：应用开发」
+- [[2026-10-14-LangChain消息与对话历史]] — 机制配套：tool_calls 与工具执行结果都要追加进消息列表再回传模型

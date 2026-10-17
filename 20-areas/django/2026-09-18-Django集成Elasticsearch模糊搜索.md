@@ -178,7 +178,5 @@ class ArticleSearchViewSet(DocumentViewSet):
 
 ## 参考信息
 
-- [[2026-09-18-Django-ORM模糊查询]] — ORM `icontains` 的性能瓶颈正是引入 ES 的起因
-- [[2026-09-18-Django-ORM查询数据]] — ES 查询语法与 ORM 查询写法的对照
-- [[2026-09-18-Django模型与数据库配置]] — SearchDocument 与 Django 模型类的对应关系
-- [[2026-09-18-Django入门配置与部署]] — `INSTALLED_APPS` 与 settings 配置方式
+- [[2026-09-18-Django知识地图]] — 学习路径中的位置：知识地图「六、部署与生态」
+- [[2026-09-18-Django-ORM模糊查询]] — 起因与对照：ORM 的 icontains 性能瓶颈正是引入 ES 的原因

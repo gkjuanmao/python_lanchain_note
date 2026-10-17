@@ -119,7 +119,6 @@ FROM student;
 
 **这是最实用的技巧之一**：一条 SQL 完成多个条件的统计，避免多次查询。
 
-> 相关：[[2026-09-19-Django-ORM的F对象与Q对象]]
 
 #### 5. `Count` 的三种用法
 
@@ -259,7 +258,6 @@ GROUP BY classmate
 ORDER BY count DESC;
 ```
 
-> 相关：[[2026-09-19-Django-ORM排序]]
 
 #### 6. 分组后过滤：`HAVING`
 
@@ -416,7 +414,6 @@ GROUP BY author.id
 ORDER BY article_count DESC;
 ```
 
-> 相关：[[2026-09-18-Django-ORM查询数据]]
 
 #### 7. 每个作者已发布文章数（条件聚合）
 
@@ -740,8 +737,4 @@ Student.objects.values("classmate").annotate(
 
 ## 参考信息
 
-- [[2026-09-19-Django-ORM的F对象与Q对象]] — 条件聚合 filter=Q(...) 以及 Q 与 F 的组合使用
-- [[2026-09-19-Django-ORM排序]] — 分组结果排序与 order_by 的覆盖规则
-- [[2026-09-18-Django-ORM查询数据]] — filter/values 是分组查询的入口
-- [[2026-09-19-Django-ORM惰性执行与缓存]] — 聚合会立即求值，与惰性机制相关
-- [[2026-09-19-Django查询优化]] — 统计类查询的性能与索引
+- [[2026-09-18-Django知识地图]] — 学习路径中的位置：知识地图「五、数据库与 ORM」

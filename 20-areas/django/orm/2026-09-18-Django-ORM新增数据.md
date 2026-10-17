@@ -317,11 +317,5 @@ class StudentCreateView(View):
 
 ## 参考信息
 
-- [[2026-09-18-Django模型与数据库配置]] — 写入目标模型的字段定义
-- [[2026-09-18-Django-ORM查询数据]] — 写入之后如何取回验证
-- [[2026-09-18-Django-ORM更新数据]] — `bulk_create` 与 `bulk_update` 的批量思路一致
-- [[2026-09-18-Django-ORM删除数据]] — 同样需要 `atomic` 事务包裹的写入场景
-- [[2026-09-15-Django配置Argon2id密码哈希]] — `create_user` 内部的密码哈希过程
-- [[2026-09-19-Django-ORM的F对象与Q对象]] — 条件的动态组合
-- [[2026-09-19-Django-ORM聚合与分组]] — 统计口径与写入后的数据核算
-- [[2026-09-19-Django查询优化]] — bulk_create 的批量写入建议
+- [[2026-09-18-Django知识地图]] — 学习路径中的位置：知识地图「五、数据库与 ORM」
+- [[2026-09-19-Django查询优化]] — 延伸：bulk_create 的批量写入建议在该篇

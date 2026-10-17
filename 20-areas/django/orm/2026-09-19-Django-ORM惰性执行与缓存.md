@@ -73,7 +73,6 @@ if min_age:
 students = list(qs)
 ```
 
-> 相关：[[2026-09-18-Django-ORM查询数据]]
 
 ---
 
@@ -176,7 +175,6 @@ for s in qs.iterator():   # 又查一次库
 
 `iterator()` 用于**大数据量遍历**，避免一次性把所有记录加载到内存。
 
-> 相关：[[2026-09-19-Django-ORM聚合与分组]]
 
 ---
 
@@ -265,7 +263,4 @@ Django 3.0+ 对 `qs[0]` 有优化，可能只查一条，但**后续再访问 `q
 
 ## 参考信息
 
-- [[2026-09-18-Django-ORM查询数据]] — filter/exclude 的惰性求值在上篇已提出，本篇展开机制
-- [[2026-09-19-Django-ORM聚合与分组]] — aggregate/annotate 的求值时机同样受惰性与缓存影响
-- [[2026-09-19-Django-ORM排序]] — order_by 属于不触发查询的链式方法
-- [[2026-09-19-Django查询优化]] — exists/count/iterator 的使用建议
+- [[2026-09-18-Django知识地图]] — 学习路径中的位置：知识地图「五、数据库与 ORM」
