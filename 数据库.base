@@ -1,0 +1,14 @@
+filters:
+  and:
+    - file.tags.contains("langchain")
+formulas:
+  未命名: ""
+views:
+  - type: table
+    name: 视图
+  - type: table
+    name: 视图 2
+    order:
+      - file.name
+      - file.tags
+      - tags
