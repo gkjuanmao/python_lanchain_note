@@ -9,3 +9,6 @@
 # 注意：.dsh/skills/ 仍要入库，走 .githooks/sync-skill.sh 同步
 .dsh/plugins/
 
+# 第三方输入法（搜狗）在本目录留下的运行日志，与笔记库无关，不入库
+debug.log
+
